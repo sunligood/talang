@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+</head>
+
+<body>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script>
+    $.ajax({
+      type: 'POST',
+      url: '/order/add',
+      dataType: 'json',
+      data: { name: '552', done: '2020-06-17', work: '保养', detail: '宝啊实打实打', price: '2222' },
+      success: function (params) {
+        console.log(params)
+      }
+    })
+  </script>
+</body>
+
+</html>
