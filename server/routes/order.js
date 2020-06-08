@@ -5,9 +5,8 @@ var mysql = require('../mysql/index')
 /* GET users listing. */
 router.post('/add', function (req, res, next) {
   let body = req.body
-  let sql = `INSERT INTO order_list (name, done, work, detail, price) VALUES (?,?,?,?,?)`
-  let sqlVal = [body.name, body.done, body.work, body.detail, body.price]
-  mysql.query(sql, sqlVal, (err, result) => {
+  let sql = `INSERT INTO order_list (name, done, work, detail, price) VALUES ('${body.name}','${body.done}','${body.work}','${body.detail}','${body.price}')`
+  mysql.query(sql, (err, result) => {
     if (err) {
       res.send({
         code: 0,
